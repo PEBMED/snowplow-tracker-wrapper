@@ -65,8 +65,9 @@ public final class SnowplowTrackerControllerBuilder {
 
     @discardableResult
     public func gdpr(_ config: SnowplowTrackerWrapper.GDPRConfiguration) -> Self {
+        guard let basis = GDPRProcessingBasis(rawValue: config.basis.rawValue) else { return self }
         gdpr = GDPRConfiguration(
-            basis: .init(rawValue: config.basis.rawValue)!,
+            basis: basis,
             documentId: config.documentId,
             documentVersion: config.documentVersion,
             documentDescription: config.documentDescription
