@@ -18,7 +18,7 @@ public final class SnowplowTrackerControllerBuilder {
     private var globalContexts: GlobalContextsConfiguration?
     private var subject: SubjectConfiguration?
 
-    init(trackerConfig: TrackerConfig, userId: String) {
+    public init(trackerConfig: TrackerConfig, userId: String) {
         self.trackerConfig = trackerConfig
         self.userId = userId
     }

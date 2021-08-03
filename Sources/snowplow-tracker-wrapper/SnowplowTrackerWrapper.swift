@@ -18,6 +18,18 @@ public final class SnowplowTrackerWrapper: NSObject {
         let documentId: String
         let documentVersion: String
         let documentDescription: String
+
+        init(
+            basis: GDPRBasis,
+            documentId: String,
+            documentVersion: String,
+            documentDescription: String
+        ) {
+            self.basis = basis
+            self.documentId = documentId
+            self.documentVersion = documentVersion
+            self.documentDescription = documentDescription
+        }
     }
 
     // MARK: - Private properties
