@@ -19,7 +19,7 @@ public final class SnowplowTrackerWrapper: NSObject {
         let documentVersion: String
         let documentDescription: String
 
-        init(
+        public init(
             basis: GDPRBasis,
             documentId: String,
             documentVersion: String,
