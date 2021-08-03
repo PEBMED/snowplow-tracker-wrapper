@@ -5,7 +5,7 @@
 //  Copyright © 2021 PEBMED. All rights reserved.
 //
 
-open public class SnowplowEntity {
+open class SnowplowEntity {
     // MARK: - Public properties
     public let schema: String
     public let entityKey: String

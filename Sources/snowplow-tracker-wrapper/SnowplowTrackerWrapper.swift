@@ -9,11 +9,11 @@ import SnowplowTracker
 
 public final class SnowplowTrackerWrapper: NSObject {
     // MARK: - Models
-    enum GDPRBasis: Int {
+    public enum GDPRBasis: Int {
         case consent = 1
     }
 
-    struct GDPRConfiguration {
+    public struct GDPRConfiguration {
         let basis: GDPRBasis
         let documentId: String
         let documentVersion: String
