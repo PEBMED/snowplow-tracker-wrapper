@@ -5,7 +5,7 @@
 //  Copyright © 2021 PEBMED. All rights reserved.
 //
 
-public class SnowplowEvent {
+open public class SnowplowEvent {
     // MARK: - Public properties
     public let schema: String
     public var keyValueMap: [String: Any?]?

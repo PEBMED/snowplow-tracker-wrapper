@@ -7,7 +7,7 @@
 
 import SnowplowTracker
 
-final class SnowplowTrackerControllerBuilder {
+public final class SnowplowTrackerControllerBuilder {
     private let trackerConfig: TrackerConfig
     private let userId: String
 
@@ -24,7 +24,7 @@ final class SnowplowTrackerControllerBuilder {
     }
 
     @discardableResult
-    func setNetwork() -> Self {
+    public func setNetwork() -> Self {
         let networkConnection = DefaultNetworkConnection.build { [trackerConfig] builder in
             builder.setUrlEndpoint(trackerConfig.emitterUri)
             builder.setHttpMethod(.get)
@@ -36,7 +36,7 @@ final class SnowplowTrackerControllerBuilder {
     }
 
     @discardableResult
-    func setTracker() -> Self {
+    public func setTracker() -> Self {
         tracker = TrackerConfiguration()
             .base64Encoding(false)
             .sessionContext(true)
@@ -55,7 +55,7 @@ final class SnowplowTrackerControllerBuilder {
     }
 
     @discardableResult
-    func setEmitter() -> Self {
+    public func setEmitter() -> Self {
         let eventStore = SQLiteEventStore(namespace: trackerConfig.nameSpace)
         emitter = EmitterConfiguration()
             .eventStore(eventStore)
@@ -64,7 +64,7 @@ final class SnowplowTrackerControllerBuilder {
     }
 
     @discardableResult
-    func gdpr(_ config: SnowplowTrackerWrapper.GDPRConfiguration) -> Self {
+    public func gdpr(_ config: SnowplowTrackerWrapper.GDPRConfiguration) -> Self {
         gdpr = GDPRConfiguration(
             basis: .init(rawValue: config.basis.rawValue)!,
             documentId: config.documentId,
@@ -75,19 +75,19 @@ final class SnowplowTrackerControllerBuilder {
     }
 
     @discardableResult
-    func setGlobalContexts() -> Self {
+    public func setGlobalContexts() -> Self {
         globalContexts = GlobalContextsConfiguration()
         return self
     }
 
     @discardableResult
-    func setSubject() -> Self {
+    public func setSubject() -> Self {
         subject = SubjectConfiguration()
             .userId(userId)
         return self
     }
 
-    func build() -> TrackerController {
+    public func build() -> TrackerController {
         var configurations: [Configuration] = []
 
         if let configuration = tracker {
