@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/snowplow/snowplow-objc-tracker",
         "state": {
           "branch": null,
-          "revision": "2cf806e834a75ce801c46f0182f23b481655762b",
-          "version": "2.2.1"
+          "revision": "1c3653435ff257ab661f73a0cfbd37335f9fb8fe",
+          "version": "3.0.2"
         }
       }
     ]

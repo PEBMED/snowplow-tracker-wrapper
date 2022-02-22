@@ -78,8 +78,8 @@ public final class SnowplowTrackerWrapper: NSObject {
         let entities = loadEventEntities(snowplowEvent)
         let event = ScreenView(name: screenName, screenId: UUID())
 
-        let mutableArray = NSMutableArray(array: entities)
-        event.setContexts(mutableArray)
+        let mutableArray = NSMutableArray(array: entities)        
+        event.contexts = mutableArray
 
         tracker.track(event)
     }
@@ -126,7 +126,7 @@ public final class SnowplowTrackerWrapper: NSObject {
     private func sendEvent(event: SelfDescribingJson, entities: [SelfDescribingJson]) {
         let event = SelfDescribing(eventData: event)
         let mutableArray = NSMutableArray(array: entities)
-        event.setContexts(mutableArray)
+        event.contexts = mutableArray
         tracker.track(event)
     }
 }
