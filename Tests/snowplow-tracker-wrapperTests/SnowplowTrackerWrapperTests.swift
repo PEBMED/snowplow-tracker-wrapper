@@ -45,7 +45,7 @@ final class SnowplowTrackerWrapperTests: XCTestCase {
 
     func test_getEntities_shouldReturnCorrectValue() {
         let (sut, _) = makeSUT()
-        let entity = EntityStub(title: "Test Title")
+        let entity = EntityStub()
         sut.addEntity(snowplowEntity: entity)
 
         let receivedValue = sut.getEntity(entityKey: EntityStub.key)?.first?.getValue(key: EntityStub.PROP_ID) as? String
@@ -56,7 +56,7 @@ final class SnowplowTrackerWrapperTests: XCTestCase {
 
     func test_removeEntity_shouldReturnNil() {
         let (sut, _) = makeSUT()
-        let entity = EntityStub(title: "Test Title")
+        let entity = EntityStub()
 
         sut.addEntity(snowplowEntity: entity)
         sut.removeEntity(entityKey: EntityStub.key)

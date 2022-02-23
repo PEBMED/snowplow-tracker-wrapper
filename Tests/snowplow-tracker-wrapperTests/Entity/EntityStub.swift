@@ -18,7 +18,7 @@ final class EntityStub: SnowplowEntity {
     let id: String
     let title: String
 
-    init(id: String = UUID().description, title: String) {
+    init(id: String = UUID().description, title: String = "Test Title") {
         self.id = id
         self.title = title
 
