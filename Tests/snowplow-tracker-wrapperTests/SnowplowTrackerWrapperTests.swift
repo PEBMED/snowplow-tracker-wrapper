@@ -1,6 +1,6 @@
 import XCTest
 import SnowplowTracker
-@testable import snowplow_tracker_wrapper
+import snowplow_tracker_wrapper
 
 final class SnowplowTrackerWrapperTests: XCTestCase {
     func test_init_shouldNotSendAnyEvent() {
